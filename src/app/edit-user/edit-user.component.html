@@ -1,0 +1,62 @@
+<h2>EDIT USER</h2>
+<form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label>
+      FirstName:
+      <input formControlName="firstname" name="firstname" />
+    </label>
+  </div>
+  <div>
+    <label>
+      MiddleName:
+      <input formControlName="middlename" name="middlename" />
+    </label>
+  </div>
+  <div>
+    <label>
+      LastName:
+      <input formControlName="lastname" name="lastname" />
+    </label>
+  </div>
+  <div>
+    <label>
+      Email:
+      <input formControlName="email" name="email" />
+    </label>
+  </div>
+  <div>
+    <label>
+      phone Number:
+      <input formControlName="phonenumber" name="phonenumber" />
+    </label>
+  </div>
+
+  <div>
+    <label>
+      Address
+      <input formControlName="address" name="address" />
+    </label>
+  </div>
+  <div>
+    <label>
+      CUSTOMER
+      <select formControlName="customer">
+        <option *ngFor="let customer of customerList" [value]="customer.id">
+          {{ customer.name }}
+        </option>
+      </select>
+    </label>
+  </div>
+  <div>
+    <label>
+      Role:
+      <select formControlName="role">
+        <option *ngFor="let role of roleList" [value]="role.key">
+          {{ role.name }}
+        </option>
+      </select>
+    </label>
+  </div>
+  <button type="submit">Update</button>
+  <button (click)="CancelChanges()">Cancel</button>
+</form>
