@@ -1,0 +1,10 @@
+{
+	"folders": [
+		{
+			"path": "../../../.."
+		},
+		{
+			"path": "../../../../../expressjs-typescript-api"
+		}
+	]
+}

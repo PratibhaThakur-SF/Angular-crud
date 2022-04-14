@@ -1,0 +1,17 @@
+<button><a [routerLink]="['/add']">ADD NEW USER</a></button>
+<table [border]="1">
+  <tr>
+    <th *ngFor="let col of displayColumns">{{ col }}</th>
+    <th>Actions</th>
+  </tr>
+  <tr *ngFor="let user of users">
+    <td *ngFor="let col of displayColumns">
+      {{ user[col] }}
+    </td>
+    <td>
+      <button (click)="Update(user)">Edit</button>
+      <button type="button" (click)="deleteUser(user.id)">Delete</button>
+    </td>
+  </tr>
+</table>
+<button (click)="refresh()">Refresh Data</button>

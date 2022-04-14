@@ -1,0 +1,60 @@
+<h2>ADD USER</h2>
+<form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label>
+      FirstName:
+      <input formControlName="firstname" placeholder="Your firstname" />
+    </label>
+  </div>
+  <div>
+    <label>
+      MiddleName:
+      <input formControlName="middlename" placeholder="Your middlename" />
+    </label>
+  </div>
+  <div>
+    <label>
+      LastName:
+      <input formControlName="lastname" placeholder="Your lastname" />
+    </label>
+  </div>
+  <div>
+    <label>
+      Email:
+      <input formControlName="email" placeholder="Your email" />
+    </label>
+  </div>
+  <div>
+    <label>
+      phone Number:
+      <input formControlName="phonenumber" placeholder="Your phone number" />
+    </label>
+  </div>
+  <div>
+    <label>
+      Address
+      <input formControlName="address" placeholder="Your Address" />
+    </label>
+  </div>
+  <div>
+    <label>
+      CUSTOMER
+      <select formControlName="customer">
+        <option *ngFor="let customer of customerList" [value]="customer.id">
+          {{ customer.name }}
+        </option>
+      </select>
+    </label>
+  </div>
+  <div>
+    <label>
+      Role:
+      <select formControlName="role">
+        <option *ngFor="let role of roleList" [value]="role.key">
+          {{ role.name }}
+        </option>
+      </select>
+    </label>
+  </div>
+  <button type="submit">Send</button>
+</form>
